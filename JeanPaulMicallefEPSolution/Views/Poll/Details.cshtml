@@ -1,0 +1,80 @@
+﻿@model Domain.Models.Poll
+
+@{
+    ViewData["Title"] = "Poll Details";
+}
+
+<h2>@Model.Title</h2>
+
+<div>
+    <p><strong>Option 1:</strong> @Model.Option1Text - Votes: @Model.Option1VotesCount</p>
+    <p><strong>Option 2:</strong> @Model.Option2Text - Votes: @Model.Option2VotesCount</p>
+    <p><strong>Option 3:</strong> @Model.Option3Text - Votes: @Model.Option3VotesCount</p>
+    <p><strong>Date Created:</strong> @Model.DateCreated.ToString("g")</p>
+</div>
+
+<h3>Vote on this poll</h3>
+<form asp-action="Vote" method="post">
+    <input type="hidden" name="pollId" value="@Model.PollId" />
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="optionNumber" value="1" id="option1" />
+        <label class="form-check-label" for="option1">@Model.Option1Text</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="optionNumber" value="2" id="option2" />
+        <label class="form-check-label" for="option2">@Model.Option2Text</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="optionNumber" value="3" id="option3" />
+        <label class="form-check-label" for="option3">@Model.Option3Text</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Vote</button>
+</form>
+
+<h3>Poll Results</h3>
+<div>
+    <canvas id="pollResultsChart" width="400" height="200"></canvas>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('pollResultsChart').getContext('2d');
+        const pollResultsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '@Model.Option1Text',
+                    '@Model.Option2Text',
+                    '@Model.Option3Text'
+                ],
+                datasets: [{
+                    label: 'Vote Count',
+                    data: [
+        @Model.Option1VotesCount,
+        @Model.Option2VotesCount,
+        @Model.Option3VotesCount
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}

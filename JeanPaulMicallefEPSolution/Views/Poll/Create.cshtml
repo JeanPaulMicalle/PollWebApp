@@ -1,0 +1,35 @@
+﻿@model Domain.Models.PollCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Poll";
+}
+
+<h2>Create a New Poll</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Option1Text"></label>
+        <input asp-for="Option1Text" class="form-control" />
+        <span asp-validation-for="Option1Text" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Option2Text"></label>
+        <input asp-for="Option2Text" class="form-control" />
+        <span asp-validation-for="Option2Text" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Option3Text"></label>
+        <input asp-for="Option3Text" class="form-control" />
+        <span asp-validation-for="Option3Text" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Poll</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "PollId": 1,
+    "Title": "test",
+    "Option1Text": "1",
+    "Option2Text": "2",
+    "Option3Text": "3",
+    "Option1VotesCount": 0,
+    "Option2VotesCount": 0,
+    "Option3VotesCount": 0,
+    "DateCreated": "2025-04-05T20:40:45.7812136+02:00"
+  },
+  {
+    "PollId": 2,
+    "Title": "test",
+    "Option1Text": "1",
+    "Option2Text": "2",
+    "Option3Text": "3",
+    "Option1VotesCount": 0,
+    "Option2VotesCount": 0,
+    "Option3VotesCount": 0,
+    "DateCreated": "2025-04-05T20:45:55.5229819+02:00"
+  },
+  {
+    "PollId": 3,
+    "Title": "1",
+    "Option1Text": "1",
+    "Option2Text": "1",
+    "Option3Text": "1",
+    "Option1VotesCount": 0,
+    "Option2VotesCount": 0,
+    "Option3VotesCount": 0,
+    "DateCreated": "2025-04-05T20:48:50.4464+02:00"
+  },
+  {
+    "PollId": 4,
+    "Title": "2",
+    "Option1Text": "3",
+    "Option2Text": "4",
+    "Option3Text": "5",
+    "Option1VotesCount": 0,
+    "Option2VotesCount": 1,
+    "Option3VotesCount": 0,
+    "DateCreated": "2025-04-05T20:49:00.5398176+02:00"
+  },
+  {
+    "PollId": 5,
+    "Title": "test",
+    "Option1Text": "1",
+    "Option2Text": "2",
+    "Option3Text": "3",
+    "Option1VotesCount": 0,
+    "Option2VotesCount": 0,
+    "Option3VotesCount": 0,
+    "DateCreated": "2025-04-06T13:34:55.0860609+02:00"
+  }
+]
